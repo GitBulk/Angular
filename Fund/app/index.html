@@ -1,59 +1,143 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="myApp">
+
 <head>
-	<meta charset="UTF-8"
-	<title>My website</title>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	
+	<title>Blog Home - Start Bootstrap Template</title>
+
+	<!-- Bootstrap Core CSS -->
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
-</head>
-<body>
-	<div class="container">
-		<div ng-controller="MainController">
-			<img ng-src="{{event.imageUrl}}" alt="{{event.name}}" />
-			<div class="row">
-				<div class="spannll">
-					<h2>{{event.name}}</h2>
-				</div>
-			</div>
-			<div class="row">
-				<div class="span3">
-					<div><strong>Date: </strong>{{event.name}}</div>
-					<div><strong>Date: </strong>{{event.time}}</div>
-				</div>
-				<div class="span4">
-					<address>
-						<strong>Address:</strong><br/>
-						{{event.location.address}} <br/>
-						{{event.location.city}}, {{event.location.province}}
-					</address>
-				</div>
-			</div>
-			<hr/>
-			<h3>Sessions</h3>
-			<ul class="thumbnails">
-				<li ng-repeat="item in event.sessions">
-					<div>
-						<div ng-click="upVoteSession(item)"><strong>Up</strong></div>
-						<div>{{item.upVoteCount}}</div>
-						<div ng-click="downVoteSession(item)"><strong>Down</strong></div>
-					</div>
-					<h4 class="well-title">{{item.name}}</h4>
-					<h6>Creator: {{item.creatorName}}</h6>
-					<span>Duration: {{item.duration}}</span><br/>
-					<span>Level: {{item.level}}</span>
-					<p>{{item.desciption}}</p>
-				</li>
-			</ul>
-		</div>
-	</div>
-	<script src="js/app.js"></script>
-	<script src="js/controllers/MainController.js"></script>
-	<script type="text/javascript">
-		
 
-	</script>
-</body>
-</html>
+	<!-- Custom CSS -->
+	<link href="css/blog-home.css" rel="stylesheet">
 
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+        <style>
+        	i.glyphicon-thumbs-up {
+        		color: #1abc9c;
+        	}
+        	i.glyphicon-thumbs-down {
+        		color: #e74c3c;
+        		padding-left: 5px;
+        	}
+        	div.vote {
+        		width: 15px;
+        		display: inline;
+        		font: 300 normal 1.125em "Roboto",Arial,Verdana,sans-serif;
+        		color: #34495e;
+        		text-align: center;
+        		background-color: transparent !important;
+        		border: none !important;
+        	}
+        </style>
+    </head>
+
+    <body>
+
+    	<!-- Navigation -->
+    	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    		<div class="container">
+    			<!-- Brand and toggle get grouped for better mobile display -->
+    			<div class="navbar-header">
+    				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+    					<span class="sr-only">Toggle navigation</span>
+    					<span class="icon-bar"></span>
+    					<span class="icon-bar"></span>
+    					<span class="icon-bar"></span>
+    				</button>
+    				<a class="navbar-brand" href="#">AngularJs</a>
+    			</div>
+    			<!-- /.navbar-collapse -->
+    		</div>
+    		<!-- /.container -->
+    	</nav>
+
+    	<!-- Page Content -->
+    	<div class="container" ng-controller="MainController" >
+    		<div class="row">
+    			<!-- Blog Entries Column -->
+    			<div class="col-md-8">
+    				<h1 class="page-header">
+    					Sessions
+    				</h1>
+    				<!-- First Blog Post -->
+    				
+    				<div ng-repeat="item in event.sessions">
+    					<h2><a href="#">{{ item.name }}</a></h2>
+    					<p class="lead">
+    						by <a href="#">{{ item.creatorName }}</a>
+    					</p>
+    					<p>
+    						<span class="glyphicon glyphicon-time"></span> {{ item.duration }}. Level: {{item.level}}
+    					</p>
+
+    					<p>{{ item.description }}</p>
+    					<i id="like1" class="glyphicon glyphicon-thumbs-up"></i>
+    					<div id="like1-bs3" class="vote">11</div>
+    					<i id="disLike1" class="glyphicon glyphicon-thumbs-down"></i>
+    					<div id="disLike1-bs3" class="vote">11</div>
+    					<hr>
+    				</div>
+
+    			</div>
+
+    			<!-- Blog Sidebar Widgets Column -->
+    			<div class="col-md-4">
+    				<!-- Blog Categories Well -->
+    				<div class="well"  style="padding-left:25px">
+    					<img ng-src="{{event.imageUrl}}" alt="{{event.name}}" />
+    					<div class="row">
+    						<div class="spannll">
+    							<h2>{{event.name}}</h2>
+    						</div>
+    					</div>
+    					<div class="row">
+    						<div class="span3">
+    							<div><strong>Date: </strong>{{event.name}}</div>
+    							<div><strong>Date: </strong>{{event.time}}</div>
+    						</div>
+    						<div class="span4">
+    							<address>
+    								<strong>Address: </strong>{{event.location.address}}, {{event.location.city}}
+    							</address>
+    						</div>
+    					</div>
+    					<!-- /.row -->
+    				</div>
+    			</div>
+    		</div>
+    		<!-- /.row -->
+
+    		<!-- Footer -->
+    		<footer>
+    			<div class="row">
+    				<div class="col-lg-12">
+    					<p>Copyright &copy; ToanTN 2015</p>
+    				</div>
+    				<!-- /.col-lg-12 -->
+    			</div>
+    			<!-- /.row -->
+    		</footer>
+
+    	</div>
+    	<!-- /.container -->
+
+    	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+    	<script src="js/app.js"></script>
+    	<script src="js/controllers/MainController.js"></script>
+    </body>
+
+    </html>
