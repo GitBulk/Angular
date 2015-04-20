@@ -83,10 +83,10 @@
     					</p>
 
     					<p>{{ item.description }}</p>
-    					<i id="like1" class="glyphicon glyphicon-thumbs-up"></i>
-    					<div id="like1-bs3" class="vote">11</div>
-    					<i id="disLike1" class="glyphicon glyphicon-thumbs-down"></i>
-    					<div id="disLike1-bs3" class="vote">11</div>
+    					<i class="glyphicon glyphicon-thumbs-up" ng-click="likeSession(item)"></i>
+    					<div class="vote">{{ item.likeCount }}</div>
+    					<i class="glyphicon glyphicon-thumbs-down" ng-click="dislikeSession(item)"></i>
+    					<div class="vote">{{ item.dislikeCount }}</div>
     					<hr>
     				</div>
 

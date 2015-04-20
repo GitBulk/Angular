@@ -18,7 +18,8 @@ app.controller('MainController', ['$scope', function($scope){
 				level: "Advanced",
 				//description: "You will learn directive",
 				description: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.",
-				upVoteCount: 0
+				likeCount: 0,
+				dislikeCount: 0
 			},
 			{
 				name: "Scopes master class",
@@ -27,7 +28,8 @@ app.controller('MainController', ['$scope', function($scope){
 				level: "Advanced",
 				//description: "You will learn Scope",
 				description: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.",
-				upVoteCount: 0
+				likeCount: 0,
+				dislikeCount: 0
 			},
 			{
 				name: "Controller master class",
@@ -36,16 +38,17 @@ app.controller('MainController', ['$scope', function($scope){
 				level: "Advanced",
 				//description: "You will learn controller",
 				description: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.",
-				upVoteCount: 0
+				likeCount: 0,
+				dislikeCount: 0
 			}
 		]
 	}; // end of event field
 
-	$scope.upVoteSession = function(session){
-		session.upVoteCount++;
+	$scope.likeSession = function(session){
+		session.likeCount++;
 	};
 
-	$scope.downVoteSession = function(session){
-		session.upVoteCount--;
+	$scope.dislikeSession = function(session){
+		session.dislikeCount++;
 	};
 }]);
