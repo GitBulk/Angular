@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="tinyShop">
+<head>
+	<meta charset="UTF-8">
+	<title>Tiny Shop</title>
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+	<div ng-controller="ShopController">
+		Tiny shop
+		<h3>products</h3>
+		<ul>
+			<li ng-repeat="item in data.products">
+				<span>Name: {{ item.name }}</span>
+			</li>
+		</ul>
+		<h3>category</h3>
+		<span ng-repeat="item in data.products | orderBy:'category' | UniqueArrayFilter:'category'">
+			{{ item }}
+		</span>
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-route.min.js">
+    </script>
+    <script type="text/javascript">
+    	/**
+    	* tinyShop Module
+    	*
+    	* Description
+    	*/
+    	app = angular.module('tinyShop', ["ngRoute"]);
+    </script>
+    <script src="controllers/ShopController.js">
+    </script>
+    <script src="filters/UniqueArrayFilter.js">
+    </script>
+</body>
+</html>
