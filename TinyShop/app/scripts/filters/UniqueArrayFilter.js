@@ -1,7 +1,8 @@
+'use strict';
 /*
  * Get unique category from product catalog
  */
- app.filter("UniqueArrayFilter", function() {
+ app.filter("uniqueArrayFilter", function() {
  	return function(products, propertyName) {
  		if(angular.isArray(products) && angular.isString(propertyName)) {
  			var results = [];
