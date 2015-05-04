@@ -1,0 +1,18 @@
+<snippet>
+	<content><![CDATA[
+'use strict';
+
+app.factory('factoryName', function(){
+	return {
+		result : {
+			// data is here
+			
+		} // end of result object
+	}; // end of return
+});
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<!-- <tabTrigger>hello</tabTrigger> -->
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>
