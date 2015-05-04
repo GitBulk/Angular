@@ -32,7 +32,8 @@
 				</span>
 			</div>
 			<br/>
-			<table class="table table-striped">
+			<ng-include src="viewFile()"></ng-include>
+			<!-- <table class="table table-striped">
 				<thead>
 					<tr>
 						<th>Description</th>
@@ -49,7 +50,7 @@
 						<td><input type="checkbox" ng-model="item.done" /></td>
 					</tr>
 				</tbody>
-			</table>
+			</table> -->
 			<br/>
 			<div class="checkbox-inline">
 				<label>
@@ -57,6 +58,11 @@
 				</label>
 			</div>
 			<br/>
+			<div class="checkbox-inline">
+				<label>
+					<input type="checkbox" ng-model="isUseListView" /> Use the list view
+				</label>
+			</div>
 			<!-- <input class="btn btn-primary" type="button" value="todos" ng-click="getTodoList()" />
 			<span ng-repeat="item in todos.items">
 				{{item.action}}
