@@ -59,4 +59,8 @@ app.controller('TodoController', ['$scope', '$http',
 		});
 	}
 
+	$scope.viewFile = function() {
+		return $scope.isUseListView ? "views/list.html" : "views/table.html";
+	}
+
 }]);
