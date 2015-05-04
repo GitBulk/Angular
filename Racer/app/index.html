@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="racerApp">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Racer list</title>
+	<!-- Stylesheets -->
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet" />
+	<link href="content/css/style.css" rel="stylesheet" />
+</head>
+<body ng-cloak>
+	<ng-view></ng-view>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js">
+	</script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-route.min.js">
+	</script>
+	<script type="text/javascript">
+	/**
+	* Todo Module
+	*
+	* Description
+	*/
+	app = angular.module('racerApp', ['ngRoute']);
+	app.config(['$routeProvider', function($routeProvider) {
+		$routeProvider
+			.when("/drivers", {
+				templateUrl: "views/Drivers.html",
+				controller: "RacerController"
+			})
+			.when("/drivers/:id", {
+				templateUrl: "views/DriverDetails.html",
+				controller: "DriverDetailsController"
+			})
+			.otherwise({
+				redirectTo: "/drivers"
+			});
+	}]);
+	</script>
+	<script src="scripts/services/CarService.js">
+	</script>
+	<script src="scripts/controllers/RacerController.js">
+	</script>
+	<script src="scripts/controllers/DriverDetailsController.js">
+	</script>
+	<script src="scripts/filters/SearchDriverNameFilter.js">
+	</script>
+</body>
+</html>
