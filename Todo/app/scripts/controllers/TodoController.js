@@ -24,6 +24,7 @@ app.controller('TodoController', ['$scope', '$http',
 
 	$scope.descriptionAction = "";
 	$scope.isUseListView = false;
+	$scope.showComplete = false;
 	
 	/*
 	*/
