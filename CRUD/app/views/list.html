@@ -1,0 +1,8 @@
+<ol>
+	<li ng-repeat="item in data.items | checkedItemsFilter:showComplete | orderBy:'action'">
+		<label ng-class="completeActionStatus(item)">
+					{{item.action}}
+		</label>
+		<span ng-if="item.done"> (Done)</span>
+	</li>
+</ol>
