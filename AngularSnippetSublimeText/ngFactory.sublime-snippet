@@ -1,0 +1,17 @@
+<snippet>
+	<content><![CDATA[
+app.factory('FactoryName', function FactoryName(\$q, \$http, \$location) {
+	var exports = {};
+
+	exports.functionName = function() {
+		${1:codeHere}
+	}; // end function
+
+	return exports;
+});
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<!-- <tabTrigger>hello</tabTrigger> -->
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

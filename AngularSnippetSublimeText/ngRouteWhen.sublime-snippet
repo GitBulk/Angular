@@ -1,0 +1,20 @@
+<snippet>
+	<content><![CDATA[
+\$routeProvider
+.when("/drivers", {
+	templateUrl: "ViewName1.html",
+	controller: "ControllerName"
+})
+.when("/drviers/:id", {
+	templateUrl: "ViewName2.html",
+	controller: "ControllerName"
+})
+.otherwise({
+	redirectTo: "/routeName"
+});
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<!-- <tabTrigger>hello</tabTrigger> -->
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>
