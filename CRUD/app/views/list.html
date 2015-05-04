@@ -1,8 +1,80 @@
-<ol>
-	<li ng-repeat="item in data.items | checkedItemsFilter:showComplete | orderBy:'action'">
-		<label ng-class="completeActionStatus(item)">
-					{{item.action}}
-		</label>
-		<span ng-if="item.done"> (Done)</span>
-	</li>
-</ol>
+<alert ng-repeat="item in alerts" type="item.type" close="closeAlert($index)">
+	{{item.msg}}
+</alert>
+<section>
+	<input type="text" ng-model="search" class="search-query pull left" placeholder="Search" />
+	
+	
+	<button ng-click="open()" class="btn btn-primary">
+		<i class="glyphicon glyphicon-plus icon-white"></i> Add new footbal player
+	</button>
+	
+</section>
+<br />
+<table ng-table="tableParams" class="table">
+	<thead>
+		<tr>
+			<th class="col-sm-3">Name</th>
+			<th class="col-sm-3">Team</th>
+			<th class="col-sm-3">Age</th>
+			<th class="col-sm-3"></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="item in players | orderBy:'name'">
+			<td>{{item.name}}</td>
+			<td>{{item.team}}</td>
+			<td>{{item.age}}</td>
+			<td>
+				<a class="btn btn-info" href="#">
+					<i class="glyphicon glyphicon-edit icon-white"></i>
+					Edit
+				</a>
+				<a class="btn btn-danger" href="#">
+					<i class="glyphicon glyphicon-trash icon-white"></i>
+					Delete
+				</a>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+
+<!-- <script type="text/ng-template" id="player_modal"> -->
+<div class="modal-header">
+	<h3>Player Form</h3>
+</div>
+<div class="modal-body">
+	<form name="userForm" class="form-horizontal">
+		<div class="control-group">
+			<label class="control-label" for="name">Name</label>
+			<div class="controls">
+				<input id="name" name="name" ng-model="" type="text" placeholder="Name" class="input-xlarge" required=""/>
+			</div>
+		</div>
+
+		<div class="control-group">
+			<label class="control-label" for="password">Team</label>
+			<div class="controls">
+				<input id="team" name="team" ng-model="" type="text" placeholder="team" required="" />
+			</div>
+		</div>
+
+		<div class="control-group">
+			<label class="control-label" for="password">Age</label>
+			<div class="controls">
+				<input id="age" name="age" ng-model="" type="text" placeholder="age" required="" />
+			</div>
+		</div>
+	</form>
+</div>
+<div class="modal-footer">
+	<button ng-click="save()" class="btn btn-primary">
+		<i class="icon-white icon-plus"></i> Save
+	</button>
+	<button ng-click="add()" type="submit" class="btn btn-primary">
+		<i class="icon-white icon-plus"></i> Add
+	</button>
+	<button ng-click="cancel()" class="btn">Cancel</button>
+</div>
+<!-- </script> -->
