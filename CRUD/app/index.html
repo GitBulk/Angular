@@ -23,41 +23,23 @@
 	<meta name="theme-color" content="#ffffff">
 	<!-- Stylesheets -->
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet" />
-	<link type="text/css" rel="stylesheet" href="http://angularjs.org/css/docs.css">
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-    <style type="text/css">
-        .dropdown-menu .btn.btn-default.btn-sm.btn-block { width: 100%;}
-        .dropdown-menu .btn.btn-default.btn-sm { background-color: #fff; background-image: none; }
-    </style>
+	<link rel="stylesheet" href="content/css/style.css">
 </head>
 <body>
-	<div class="container" ng-controller="CrudController" ng-cloak>
-		<h2>AngularJs</h2>
-		<ng-view></ng-view>
-	</div> <!-- end of container -->
+	<div class="container">
+		<h2>Players List</h2>
+		<div ng-view></div>
+	</div>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js">
+	</script>
+	<script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.13.0.js">
 	</script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-route.min.js">
 	</script>
-	<script type="text/javascript">
-    	/**
-    	* Todo Module
-    	*
-    	* Description
-    	*/
-    	app = angular.module('crudApp', ['ngRoute']);
-    	app.config(['$routeProvider', function($routeProvider) {
-    		$routeProvider
-    			.when('/', {
-    				controller: "CrudController",
-    				templateUrl: "views/list.html"
-    			})
-    			.otherwise({
-    				redirectTo: '/'
-    			});
-    	}]);
-    </script>
-    <script src="scripts/controllers/CrudController.js">
-    </script>
+	<script src="scripts/app.js">
+	</script>
+	<script src="scripts/controllers/CrudController.js">
+	</script>
 </body>
 </html>
