@@ -2,7 +2,7 @@
 	{{item.msg}}
 </alert>
 <section>
-	<input type="text" ng-model="search" class="search-query pull left" placeholder="Search" />
+	<input type="text" class="search-query pull left" placeholder="Search" />
 	
 	
 	<button ng-click="open()" class="btn btn-primary">
@@ -40,6 +40,7 @@
 </table>
 
 
+<!-- Modal dialog is here -->
 <!-- <script type="text/ng-template" id="player_modal"> -->
 <div class="modal-header">
 	<h3>Player Form</h3>
@@ -49,21 +50,21 @@
 		<div class="control-group">
 			<label class="control-label" for="name">Name</label>
 			<div class="controls">
-				<input id="name" name="name" ng-model="" type="text" placeholder="Name" class="input-xlarge" required=""/>
+				<input id="name" name="name" type="text" placeholder="Name" class="input-xlarge" required=""/>
 			</div>
 		</div>
 
 		<div class="control-group">
 			<label class="control-label" for="password">Team</label>
 			<div class="controls">
-				<input id="team" name="team" ng-model="" type="text" placeholder="team" required="" />
+				<input id="team" name="team" type="text" placeholder="team" required="" />
 			</div>
 		</div>
 
 		<div class="control-group">
 			<label class="control-label" for="password">Age</label>
 			<div class="controls">
-				<input id="age" name="age" ng-model="" type="text" placeholder="age" required="" />
+				<input id="age" name="age" type="text" placeholder="age" required="" />
 			</div>
 		</div>
 	</form>
