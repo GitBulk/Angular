@@ -30,8 +30,18 @@ app.controller('CrudController', ['$scope', '$http', '$modal',
 
 app.controller('ModalPlayerController', ['$scope', '$modalInstance', 
 	function($scope, $modalInstance) {
-		
+
+	$scope.player = {
+		fullName: "",
+		team: "",
+		age: 0
+	};
+
 	$scope.cancel = function() {
 		$modalInstance.dismiss('cancel');
+	}
+
+	$scope.save = function() {
+		console.log($scope.player);
 	}
 }]);
